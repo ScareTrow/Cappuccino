@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>762</width>
+    <height>505</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Espresso</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>731</width>
+      <height>391</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>440</y>
+      <width>341</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QPushButton" name="createEntry">
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Times New Roman&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Сreate entry</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="refreshButton">
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Times New Roman&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Refresh</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
