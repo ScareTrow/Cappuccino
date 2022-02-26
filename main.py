@@ -91,22 +91,24 @@ class Window(QWidget):
         self_programm.write_to_table()
 
     def add(self):
-        ID = self.ID_input.text()
-        sorts_name = self.sort_type.text()
-        degree_of_roast = self.roast_text.text()
-        consistency = self.consistency_text.text()
-        description = self.description_text.text()
-        price = self.price_text.text()
-        volume = self.volume_text.text()
+        try:
+            ID = self.ID_input.text()
+            sorts_name = self.sort_type.text()
+            degree_of_roast = self.roast_text.text()
+            consistency = self.consistency_text.text()
+            description = self.description_text.text()
+            price = self.price_text.text()
+            volume = self.volume_text.text()
 
-        con = sqlite3.connect("coffee.db")
-        cur = con.cursor()
-        cur.execute(f"INSERT OR IGNORE INTO information VALUES ('{ID}', '{sorts_name}', '{degree_of_roast}',"
-                    f" '{consistency}', '{description}', '{price}', '{volume}')")
-        con.commit()
-        self_programm.form.close()
-        self_programm.write_to_table()
-
+            con = sqlite3.connect("coffee.db")
+            cur = con.cursor()
+            cur.execute(f"INSERT OR IGNORE INTO information VALUES ('{ID}', '{sorts_name}', '{degree_of_roast}',"
+                        f" '{consistency}', '{description}', '{price}', '{volume}')")
+            con.commit()
+            self_programm.form.close()
+            self_programm.write_to_table()
+        except sqlite3.IntegrityError:
+            print("Введите значения")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
